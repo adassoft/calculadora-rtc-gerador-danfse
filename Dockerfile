@@ -11,7 +11,7 @@ RUN go install github.com/swaggo/swag/cmd/swag@v1.16.6
 
 RUN /go/bin/swag init -g cmd/danfse/main.go -o ./api/swagger
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o danfse-service ./cmd/danfse
+RUN CGO_ENABLED=0 GOOS=linux go build -o danfse-service ./cmd/danfse
 
 FROM alpine:latest
 
